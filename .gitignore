@@ -1,1 +1,14 @@
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Makefile
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
 build/
+.vscode/
+RacerDisplay/RacerDisplay
+RacerDisplay/github_evdi-prefix
+RacerDisplay/libevdipp
+RacerDisplay/usbdisp-prefix
+RacerDisplay/stage
