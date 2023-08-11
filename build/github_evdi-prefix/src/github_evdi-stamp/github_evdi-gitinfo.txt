@@ -1,3 +1,0 @@
-repository='https://ghproxy.com/https://github.com/DisplayLink/evdi.git'
-module=''
-tag=''

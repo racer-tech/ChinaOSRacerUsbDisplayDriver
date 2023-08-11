@@ -1,2 +1,0 @@
-/usr/bin/ar qc libevdipp.a  CMakeFiles/evdipp.dir/buffer.cpp.o CMakeFiles/evdipp.dir/evdi.cpp.o CMakeFiles/evdipp.dir/screen.cpp.o
-/usr/bin/ranlib libevdipp.a
