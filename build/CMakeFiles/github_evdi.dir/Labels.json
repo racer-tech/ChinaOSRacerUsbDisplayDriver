@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/CMakeFiles/github_evdi"
+		},
+		{
+			"file" : "/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/CMakeFiles/github_evdi.rule"
+		},
+		{
+			"file" : "/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/CMakeFiles/github_evdi-complete.rule"
+		},
+		{
+			"file" : "/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/github_evdi-prefix/src/github_evdi-stamp/github_evdi-install.rule"
+		},
+		{
+			"file" : "/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/github_evdi-prefix/src/github_evdi-stamp/github_evdi-mkdir.rule"
+		},
+		{
+			"file" : "/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/github_evdi-prefix/src/github_evdi-stamp/github_evdi-download.rule"
+		},
+		{
+			"file" : "/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/github_evdi-prefix/src/github_evdi-stamp/github_evdi-update.rule"
+		},
+		{
+			"file" : "/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/github_evdi-prefix/src/github_evdi-stamp/github_evdi-patch.rule"
+		},
+		{
+			"file" : "/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/github_evdi-prefix/src/github_evdi-stamp/github_evdi-configure.rule"
+		},
+		{
+			"file" : "/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/github_evdi-prefix/src/github_evdi-stamp/github_evdi-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"github_evdi"
+		],
+		"name" : "github_evdi"
+	}
+}

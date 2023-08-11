@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/RacerDisplay.dir/driver.cpp.o CMakeFiles/RacerDisplay.dir/RacerDisplay.cpp.o  -o RacerDisplay -Wl,-rpath,:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: ../libevdipp/libevdipp.a ../github_evdi-prefix/src/github_evdi/library/libevdi.so ../../libusbdisp/lib/amd64//libusbdisp.so -lev -lusb-1.0 -lX11 -lXext -lXrandr 

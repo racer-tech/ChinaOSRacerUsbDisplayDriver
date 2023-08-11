@@ -1,0 +1,13 @@
+# Target labels
+ usbdisp
+# Source files and their labels
+/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/CMakeFiles/usbdisp
+/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/CMakeFiles/usbdisp.rule
+/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/CMakeFiles/usbdisp-complete.rule
+/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/usbdisp-prefix/src/usbdisp-stamp/usbdisp-install.rule
+/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/usbdisp-prefix/src/usbdisp-stamp/usbdisp-mkdir.rule
+/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/usbdisp-prefix/src/usbdisp-stamp/usbdisp-download.rule
+/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/usbdisp-prefix/src/usbdisp-stamp/usbdisp-update.rule
+/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/usbdisp-prefix/src/usbdisp-stamp/usbdisp-patch.rule
+/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/usbdisp-prefix/src/usbdisp-stamp/usbdisp-configure.rule
+/home/test/Desktop/code/ChinaOSRacerUsbDisplayDriver/build/usbdisp-prefix/src/usbdisp-stamp/usbdisp-build.rule
