@@ -40,22 +40,18 @@ Racertech于2022年开发了专门基于Linux国产系统（UOS，Kylin）两大
 ### 如何构建bin档
 首先，构建可执行的bin档，一定是要先进行环境的编译的，当环境编译完成以后，才能进行bin档的构建，此driver编译的形式还是使用Cmake以及makefile的方式
 
-在CHinaOSRacerUsbDisplayDriver目录下，创建一个Build文件夹,进入这个文件夹进行环境编译。
+在CHinaOSRacerUsbDisplayDriver目录下，按照此步骤进行编译。
 ```
 mkdir build
 cd build
 ```
-先试用cmake编译
 ```
 cmake ..
 ```
-这里可以去检查build下是否存在可编译的makefile文件
-
-使用Make指令编译生成bin档
 ```
 make install
 ```
-编译完成后,进入stage文件夹下的bin文件夹下，启动驱动文件RacerDisplay
+### 启动驱动文件RacerDisplay
 ```
 cd stage/bin
 sudo ./RacerDisplay
