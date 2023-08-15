@@ -1,54 +1,62 @@
-# evdipp
-[![Build Status](https://travis-ci.org/mlukaszek/evdipp.svg?branch=master)](https://travis-ci.org/mlukaszek/evdipp)
+# RacerTech UsbDisplay Driver
+支持系统（统信，麒麟，Ubuntu）
+## 所需内核模块介绍
+### EVDI
+EVDI(Embedded Virtual Display Interface)是一个开源的Linux内核模块，用于来显示连接的虚拟化和多显示器的扩展。允许讲USB连接将外部显示器连接到计算机上。
 
-Simple C++ wrapper for [DisplayLink evdi](https://github.com/DisplayLink/evdi) library, with some example client code.
-Currently undocumented, but hopefully simple enough to be useful even as-is.
+EVDI允许通过USB连接将额外的显示器或者显示设备连接到计算器，从而实现多荧幕显示，EVDI提供了与显示设备通信的接口，使得操作系统和应用程序可以操作USB设备进行显示，在一些需要便捷显示器来显示的时候，可以直接使用USB接口直接进行使用
 
-## Contents
-This project is a very simple example of how to write a complete client for DisplayLink's evdi/libevdi.
+EVDI在Racertech的驱动中主要提供在linux上实现多屏幕扩展和虚拟现实功能，用户可以用EVDI模块在Linux系统上通过USB连接并使用外部设备。
 
-It includes:
-- a very thin C++ wrapper for the library, called `libevdipp`,
-- a simple terminal-based example which registers a virtual screen and logs to console,
-- a more complete `monitorsim` Qt sample app which uses evdi to add an additional screen an show its contents in a window. This application uses more features of the library than the console client - for example, enables client-side mouse compositing.
+## 驱动介绍
+### 功能介绍
+Racertech于2022年开发了专门基于Linux国产系统（UOS，Kylin）两大国产驱动厂商去开发usbdisp_linux驱动，目前使用RacerTech芯片的外接USB显示器例如签批屏，扩展屏等在x86_64和arm64两个比较常见的架构上流畅使用。
+* USB热插拔
+* 支持多分辨率
+* 可更改分辨率
+* 可旋转
+* 睡眠/唤醒
+* 保持显示设置
+* 屏幕可随系统开关而开关
+* 在退出线程后可关闭显示器
+### 待开发功能
+* 多扩展显示器支持（目前linux只支持单扩展）
+* 亮度调节
+* 根据重力感应事件旋转
 
-![screenshot2021](https://user-images.githubusercontent.com/4071821/103447188-18c8ad00-4c88-11eb-9da2-d9b544018f1a.png)
+### 代码架构
+* RacerDisplay (使用Cmake进行Bin档构建)
 
-## Building
-You need cmake to build. EVDI is defined as external project which will be cloned from git as part of the build. As with libevdi, you need libdrm-dev package to be installed to be able to compile the library.
+* conf (驱动配置补丁)
 
-Additionally:
-- to build the example terminal app, you need libev/libev++.
-- to build the Qt example, you obviously need Qt 5 dev packages installed.
+* libevdipp(evdi接口部分)
 
-If you're using recent Ubuntu, you can do it by executing
+* libusbdisp(library以及xrandr和usbdisp类的声明，会提供一些于USB相关的显示的功能和方法)
 
-    sudo apt-get install -y libev-dev cmake libdrm-dev unzip libghc-x11-dev gcc g++ dkms libusb-1.0-0-dev
-
-Then, you can build it by pretty standard chain of commands:
-
-    mkdir build
-    cd build
-    cmake ..
-    make install
-
-## build deb package and run package
-    sudo apt install -y dh-make
-    cd libusbdisp
-    make deb
-
-## Running
-This project assumes you are familiar with what [evdi](https://github.com/DisplayLink/evdi) is, and how to build it for your system. Before attempting to launch any of the samples, make sure `evdi` kernel module is loaded. If you don't see it in the output of `lsmod`, run `modprobe evdi` first.
-
-Any client app for EVDI at the moment must be run by root to be able to function - so, using `sudo` is required. For example, to run the `monitorsim` binary built in the `stage/bin` subdirectory of your `build` folder, use:
-
-    cd stage/bin
-    sudo monitorsim
-
-Note that both the `example` app, and the Qt `monitorsim` client expect an input file with an EDID of a monitor that they should connect to evdi (which acts like a virtual graphics adapter that you need to connect to it). They will still run without it, but will use a hard-coded, single mode (800x600) EDID, which will reduce your possibilities - for example, you will not be able to change display modes for the virtual screen as it will only have one mode available.
-
-You can get an EDID from any monitor you have (see `ls -la /sys/class/drm/*/edid`), or source it from the net - for example from
-[Google's autotest project](https://chromium.googlesource.com/chromiumos/third_party/autotest/+/master/server/site_tests/display_Resolution/test_data/edids).
-Note however that the EDIDs you use must be valid - and many are not. EVDI refuses EDIDs with invalid checksums, connection attempts will fail with `Invalid argument` error reported by the libevdi library.
+* CMakelists.txt(用于构建bin档的文件夹)
 
 
+## 编译步骤
+### 如何构建bin档
+首先，构建可执行的bin档，一定是要先进行环境的编译的，当环境编译完成以后，才能进行bin档的构建，此driver编译的形式还是使用Cmake以及makefile的方式
+
+在CHinaOSRacerUsbDisplayDriver目录下，创建一个Build文件夹,进入这个文件夹进行环境编译。
+```
+mkdir build
+cd build
+```
+先试用cmake编译
+```
+cmake ..
+```
+这里可以去检查build下是否存在可编译的makefile文件
+
+使用Make指令编译生成bin档
+```
+make install
+```
+编译完成后,进入stage文件夹下的bin文件夹下，启动驱动文件RacerDisplay
+```
+cd stage/bin
+sudo ./RacerDisplay
+```
